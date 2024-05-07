@@ -427,26 +427,26 @@ export default function Quiz() {
     // Render result page
     return (
       <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <h1 className="text-2xl font-bold mb-6 text-center">
-          Your field of interest is:{" "}
-          {Object.keys(scores).reduce((a, b) =>
-            scores[a] > scores[b] ? a : b
-          )}
-        </h1>
-        <h2>Score Details:</h2>
-        <ul>
-          {Object.entries(scores).map(([field, score]) => (
-            <li key={field}>
-              {field}: {score.toFixed(2)}
-            </li>
-          ))}
-        </ul>
-        <button
-          onClick={handleReset}
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
-        >
-          Reset
-        </button>
+      <h1 className="text-2xl font-bold mb-6 text-center">
+        Your field of interest is:{" "}
+        {Object.keys(scores).reduce((a, b) =>
+        scores[a] > scores[b] ? a : b
+        )}
+      </h1>
+      <h2>Score Details:</h2>
+      <ul>
+        {Object.entries(scores).map(([field, score]) => (
+        <li key={field}>
+          {field}: {Math.round(score)}
+        </li>
+        ))}
+      </ul>
+      <button
+        onClick={handleReset}
+        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
+      >
+        Reset
+      </button>
       </div>
     );
   }
