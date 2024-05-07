@@ -437,7 +437,7 @@ export default function Quiz() {
         <ul>
           {Object.entries(scores).map(([field, score]) => (
             <li key={field}>
-              {field}: {score}
+              {field}: {score.toFixed(2)}
             </li>
           ))}
         </ul>
