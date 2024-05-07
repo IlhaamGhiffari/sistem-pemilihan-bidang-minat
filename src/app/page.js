@@ -437,7 +437,7 @@ export default function Quiz() {
       <ul>
         {Object.entries(scores).map(([field, score]) => (
         <li key={field}>
-          {field}: {Math.round(score)}
+          {field}: {Math.round(score*100)/100}
         </li>
         ))}
       </ul>
